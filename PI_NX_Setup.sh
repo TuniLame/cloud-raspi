@@ -98,7 +98,7 @@ if [ "$x" = "y" ]; then
 		sed -i 's/weekly/daily/g' /etc/logrotate.d/nginx
 		sed -i 's/rotate 52/rotate 31/g' /etc/logrotate.d/nginx
 		sed -i 's/nginx rotate/nginx reload/g' /etc/logrotate.d/nginx
-		rm -r /home/pi/*
+		#rm -r /home/pi/*
 
 		sed -i 's/^max_execution_time.*/max_execution_time = 600/g' /etc/php/7.0/fpm/php.ini
 		sed -i 's/^max_input_time.*/max_input_time = 600/g' /etc/php/7.0/fpm/php.ini
