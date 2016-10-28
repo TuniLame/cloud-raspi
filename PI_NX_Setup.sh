@@ -42,10 +42,10 @@ fi
 if [ "$x" = "y" ]; then
 	echo "Europe/Berlin" > /etc/timezone
 	dpkg-reconfigure -f noninteractive tzdata
-	sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen
-	echo 'LANG="de_DE.UTF-8"'>/etc/default/locale
+	sed -i -e 's/# en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
+	echo 'LANG="en_GB.UTF-8"'>/etc/default/locale
 	dpkg-reconfigure --frontend=noninteractive locales
-	update-locale LANG="de_DE.UTF-8"
+	update-locale LANG="en_GB.UTF-8"
 	echo "     locales set"
 
 	# ============================================================
@@ -61,11 +61,11 @@ if [ "$x" = "y" ]; then
 	echo -e "tmpfs\t/var/tmp\ttmpfs\tdefaults,noatime,nosuid,size=200m\t0\t0" >> /etc/fstab
 	echo -e "tmpfs\t/var/log\ttmpfs\tdefaults,noatime,nosuid,size=100m\t0\t0" >> /etc/fstab
 	mount -a
-	grep -q -F 'arm_freq=1000' /boot/config.txt || echo 'arm_freq=1000' >> /boot/config.txt
-	grep -q -F 'core_freq=450' /boot/config.txt || echo 'core_freq=450' >> /boot/config.txt
-	grep -q -F 'sdram_freq=450' /boot/config.txt || echo 'sdram_freq=450' >> /boot/config.txt
+	# grep -q -F 'arm_freq=1000' /boot/config.txt || echo 'arm_freq=1000' >> /boot/config.txt
+	#grep -q -F 'core_freq=450' /boot/config.txt || echo 'core_freq=450' >> /boot/config.txt
+	#grep -q -F 'sdram_freq=450' /boot/config.txt || echo 'sdram_freq=450' >> /boot/config.txt
 	grep -q -F 'gpu_mem=16' /boot/config.txt || echo 'gpu_mem=16' >> /boot/config.txt
-	grep -q -F 'device_tree=' /boot/config.txt || echo 'device_tree=' >> /boot/config.txt
+	#grep -q -F 'device_tree=' /boot/config.txt || echo 'device_tree=' >> /boot/config.txt
 	echo "     setup /etc/fstab and boot.txt - done"
 	echo "     **********"
 
