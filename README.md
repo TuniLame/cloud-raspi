@@ -4,6 +4,8 @@ This is a fork from an Owncloud installation on Raspberry Pi adapted to Nextclou
 
 The ´PI_NX_Setup.sh´ file is just a copy from the ´PI_OC_Setup.sh´ file.
 
+To execute, type ´./PI_NX_Setup.sh´
+
 Original steps to do for Owncloud:
 
 1. sudo bash PI_OC_Setup.sh

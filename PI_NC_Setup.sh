@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+# Raspberry Pi 3 server preparation for Nextcloud installation script
 # *******************
 # Set basic variables
 # *******************
